@@ -9,8 +9,6 @@ defmodule DayOneB do
   def sum(input) do
     size = length(input)
 
-    IO.write("\nsumming #{inspect input}\n")
-
     sum(input, (size - 1), 0, round(size / 2), 0)
   end
 
@@ -26,9 +24,6 @@ defmodule DayOneB do
 
     a = input |> at(position)
     b = input |> at(position_b)
-
-    IO.write("found #{inspect a} at #{inspect position}\n")
-    IO.write("found #{inspect b} at #{inspect position_b} (offset) #{inspect offset}\n")
 
     new_total = case a do
       ^b -> total + a
